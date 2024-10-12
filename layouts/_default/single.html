@@ -1,0 +1,13 @@
+{{ define "main" }}
+DEBUG Layout _default/single.html<br>
+Kind = {{ .Kind }}<br>
+Layout = {{ .Layout }}<br>
+Type = {{ .Type }}<br>
+Section = {{ .Section }}<br>
+BundleType = {{ .BundleType }}<br>
+IsPage = {{ .IsPage }}<br>
+IsSection = {{ .IsSection }}<br>
+{{ partial "title.html" . }}
+{{ partial "gallery.html" . }}
+{{ partial "related.html" . }}
+{{ end }}
