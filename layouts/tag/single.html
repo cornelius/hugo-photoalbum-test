@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ partial "title.html" . }}
 <hgroup>
-  <p>Images tagged with "Berlin".</p>
+  <p>Images tagged with {{ .Params.filter.tag }}.</p>
 </hgroup>
 {{ partial "tag-gallery.html" . }}
   {{ partial "related.html" . }}

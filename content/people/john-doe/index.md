@@ -1,7 +1,7 @@
 ---
 type: tag
-title: Berlin
+title: John Doe
 params:
   filter:
-    tag: Berlin
+    tag: John
 ---
