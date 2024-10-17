@@ -15,4 +15,8 @@ resources:
       tags:
         - John
         - Berlin
+  - src: 20200724_174828-EFFECTS.jpg
+    params:
+      tags:
+        - Berlin
 ---
