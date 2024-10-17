@@ -18,6 +18,18 @@
             {{/* Title from front matter */}}
             {{ $title = $image.Title }}
           {{ end }}
+          {{ with $filter.start_date }}
+            {{ $start_date := time.AsTime . }}
+            {{ if $date.Before $start_date }}
+              {{ continue }}
+            {{ end }}
+          {{ end }}
+          {{ with $filter.end_date }}
+            {{ $end_date := time.AsTime . }}
+            {{ if $date.After $end_date }}
+              {{ continue }}
+            {{ end }}
+          {{ end }}
           {{ $images = $images | append (dict
             "Name" $image.Name
             "Title" $title

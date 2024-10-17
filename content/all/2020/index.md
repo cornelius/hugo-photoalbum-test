@@ -10,6 +10,7 @@ resources:
       tags:
         - John
   - src: img-44.webp
+    title: Brandenburger Tor
     params:
       tags:
         - John
