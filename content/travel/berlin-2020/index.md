@@ -1,5 +1,5 @@
 ---
-type: tag
+type: filtered
 title: Berlin 2020
 params:
   filter:

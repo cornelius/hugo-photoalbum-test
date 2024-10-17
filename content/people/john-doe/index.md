@@ -1,5 +1,5 @@
 ---
-type: tag
+type: filtered
 title: John Doe
 params:
   filter:
