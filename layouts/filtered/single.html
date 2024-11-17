@@ -1,7 +1,9 @@
 {{ define "main" }}
 {{ partial "title.html" . }}
 <hgroup>
-  <p>Images tagged with {{ .Params.filter.tag }}</p>
+  {{ with .Params.filter.tag }}
+    <p>Tagged with {{ . }}</p>
+  {{ end }}
   {{ with .Params.filter.start_date }}
     <p>From {{ time.AsTime . }}</p>
   {{ end }}

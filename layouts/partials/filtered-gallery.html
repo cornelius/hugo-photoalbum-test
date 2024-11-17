@@ -4,40 +4,46 @@
     {{ $filter := .Params.filter }}
     {{ range $page := .Site.RegularPages }}
       {{ range $image := $page.Resources.ByType "image" }}
-        {{ if in $image.Params.tags $filter.tag }}
-          {{ $title := "" }}
-          {{ $date := "" }}
-          {{ with $image.Exif }}
-            {{ $date = .Date }}
-            {{ with .Tags.ImageDescription }}
-              {{/* Title from EXIF ImageDescription */}}
-              {{ $title = . }}
-            {{ end }}
+        {{ with $filter.tag }}
+          {{ if not (in $image.Params.tags $filter.tag) }}
+            {{ continue }}
           {{ end }}
-          {{ if ne $image.Title $image.Name }}
-            {{/* Title from front matter */}}
-            {{ $title = $image.Title }}
-          {{ end }}
-          {{ with $filter.start_date }}
-            {{ $start_date := time.AsTime . }}
-            {{ if $date.Before $start_date }}
-              {{ continue }}
-            {{ end }}
-          {{ end }}
-          {{ with $filter.end_date }}
-            {{ $end_date := time.AsTime . }}
-            {{ if $date.After $end_date }}
-              {{ continue }}
-            {{ end }}
-          {{ end }}
-          {{ $images = $images | append (dict
-            "Name" $image.Name
-            "Title" $title
-            "Date" $date
-            "image" $image
-            )
-          }}
         {{ end }}
+
+        {{ $title := "" }}
+        {{ $date := "" }}
+        {{ with $image.Exif }}
+          {{ $date = .Date }}
+          {{ with .Tags.ImageDescription }}
+            {{/* Title from EXIF ImageDescription */}}
+            {{ $title = . }}
+          {{ end }}
+        {{ end }}
+        {{ if ne $image.Title $image.Name }}
+          {{/* Title from front matter */}}
+          {{ $title = $image.Title }}
+        {{ end }}
+
+        {{ with $filter.start_date }}
+          {{ $start_date := time.AsTime . }}
+          {{ if or (eq $date "") ($date.Before $start_date) }}
+            {{ continue }}
+          {{ end }}
+        {{ end }}
+        {{ with $filter.end_date }}
+          {{ $end_date := time.AsTime . }}
+          {{ if or (eq $date "") ($date.After $end_date) }}
+            {{ continue }}
+          {{ end }}
+        {{ end }}
+
+        {{ $images = $images | append (dict
+          "Name" $image.Name
+          "Title" $title
+          "Date" $date
+          "image" $image
+          )
+        }}
       {{ end }}
     {{ end }}
     {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
@@ -47,7 +53,7 @@
       {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
       <a class="gallery-item" href="{{ $image.RelPermalink }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" title="{{ .Title }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
         <figure style="background-color: {{ $color }}; aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
-          <img class="lazyload" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" data-src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" />
+          <img class="lazyload" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" data-src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }} ({{ .Date }})" />
         </figure>
         <meta itemprop="contentUrl" content="{{ $image.RelPermalink }}" />
         {{ with site.Params.Author }}
