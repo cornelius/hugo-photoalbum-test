@@ -4,8 +4,7 @@ title = 'Hugo Photoalbum Test'
 
 [module]
   [[module.imports]]
-    path = "github.com/nicokaiser/hugo-theme-gallery/v4"
+    path = "github.com/cornelius/hugo-photoalbum-theme"
 
 [params]
   defaultTheme = "dark"
-
