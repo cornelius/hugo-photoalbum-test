@@ -1,6 +1,10 @@
 github.com/cornelius/hugo-photoalbum-theme v0.0.0-20241117192645-3377d266e155 h1:DeJlPPhr7Hn5g5SDHTwF9K1QwcJNPENxYXHVBH0MrE0=
 github.com/cornelius/hugo-photoalbum-theme v0.0.0-20241117192645-3377d266e155/go.mod h1:VGL/C688dvvQtcWbyNixIrSf9bdBTAvu97SmLnQtfxc=
+github.com/cornelius/hugo-photoalbum-theme v0.0.0-20250531084534-11260e7c42f9 h1:hA5MYKf/WZng4FK7VyzCz7L9gxrxym9AuLYAW/przkE=
+github.com/cornelius/hugo-photoalbum-theme v0.0.0-20250531084534-11260e7c42f9/go.mod h1:IZflj1UULrDLpKVzTV+rYHDvYTHPIn62iEaqVS6j2JU=
 github.com/nicokaiser/hugo-theme-gallery/v4 v4.3.0 h1:+4CewVIKhUbMa79PaZShzlWfkYHI/R7mhqHZhcgXdhg=
 github.com/nicokaiser/hugo-theme-gallery/v4 v4.3.0/go.mod h1:oVtY67dE9NbaJw9jM4G5moHAcgT/UXxdcIQhs52KPoU=
 github.com/nicokaiser/hugo-theme-gallery/v4 v4.4.0 h1:rHgJ5E8IcFeDOE2sI5Q0+ZeSUeePlJJ4GBrjVDX3L8A=
 github.com/nicokaiser/hugo-theme-gallery/v4 v4.4.0/go.mod h1:oVtY67dE9NbaJw9jM4G5moHAcgT/UXxdcIQhs52KPoU=
+github.com/nicokaiser/hugo-theme-gallery/v4 v4.9.0 h1:Bq/coOF9D7WqAnVnE3LJ+yFIA54k4PObw2LUA5hZOuk=
+github.com/nicokaiser/hugo-theme-gallery/v4 v4.9.0/go.mod h1:oVtY67dE9NbaJw9jM4G5moHAcgT/UXxdcIQhs52KPoU=
