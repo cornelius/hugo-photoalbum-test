@@ -42,8 +42,12 @@ const albums = [
   },
   {
     name: 'travel/london-2011',
-    images: ['london-trip1.webp', 'london-trip2.webp'],
-    keyTexts: ['London 2011', 'Tagged with London'],
+    images: [
+      'big-ben.webp',
+      'pub.webp',
+      'tower-bridge.webp'
+    ],
+    keyTexts: ['London 2011', 'From', 'To'],
   },
   {
     name: 'all/1996',
