@@ -19,4 +19,8 @@ resources:
     params:
       tags:
         - Berlin
+  - src: img-london-2020.jpg
+    params:
+      tags:
+        - London
 ---

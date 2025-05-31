@@ -7,7 +7,7 @@ const OUTPUT_DIR = path.resolve(__dirname, '../public');
 const albums = [
   {
     name: 'places/london',
-    images: ['big-ben.webp', 'pub.webp', 'tower-bridge.webp'],
+    images: ['big-ben.webp', 'pub.webp', 'tower-bridge.webp', 'img-london-2020.jpg'],
     keyTexts: ['London', 'Tagged with London'],
   },
   {
@@ -50,6 +50,13 @@ const albums = [
     keyTexts: ['London 2011', 'From', 'To'],
   },
   {
+    name: 'travel/london-2020',
+    images: [
+      'img-london-2020.jpg'
+    ],
+    keyTexts: ['London 2020', 'From', 'To', "Tagged with London"],
+  },
+  {
     name: 'all/1996',
     images: ['family-album-1996.webp', 'random-scene.webp'],
     keyTexts: ['1996'],
@@ -75,7 +82,8 @@ const albums = [
       '20200724_174828-EFFECTS.jpg',
       'img-42-golden-gate.webp',
       'img-43-three-sisters.webp',
-      'img-44-brandenburger-tor.webp'
+      'img-44-brandenburger-tor.webp',
+      'img-london-2020.jpg'
     ],
     keyTexts: ['2020'],
   },
