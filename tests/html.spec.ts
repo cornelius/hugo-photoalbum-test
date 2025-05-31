@@ -140,7 +140,7 @@ test.describe('Homepage', () => {
       { title: 'People', url: '/people/' },
       { title: 'Places', url: '/places/' },
       { title: 'Travel', url: '/travel/' },
-      { title: 'Zeit', url: '/all/' }
+      { title: 'Time', url: '/all/' }
     ];
 
     for (const { title, url } of albumLinks) {
@@ -181,7 +181,7 @@ test.describe('Album subalbums', () => {
       ]
     },
     {
-      album: 'Zeit',
+      album: 'Time',
       url: '/all/',
       subalbums: [
         { title: '2004', url: '/all/2004/' },

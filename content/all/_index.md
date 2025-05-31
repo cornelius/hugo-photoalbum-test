@@ -1,3 +1,3 @@
 ---
-title: Zeit
+title: Time
 ---
