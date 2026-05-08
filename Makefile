@@ -1,14 +1,18 @@
-.PHONY: update build serve clean
+.DEFAULT_GOAL := help
+.PHONY: help update build serve clean
 
-update:
+help: ## Show available targets
+	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z_-]+:.*##/ { printf "  %-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
+
+update: ## Update the theme module to its latest commit
 	hugo mod get -u
 	hugo mod tidy
 
-build:
+build: ## Build the test album
 	hugo
 
-serve:
+serve: ## Run the dev server
 	hugo server
 
-clean:
+clean: ## Remove generated output
 	rm -rf public resources
