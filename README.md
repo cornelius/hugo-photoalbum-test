@@ -12,7 +12,7 @@ and follow the instructions there to show the album.
 
 After pushing changes to [hugo-photoalbum-theme](https://github.com/cornelius/hugo-photoalbum-theme), pull the new version into this repo with:
 
-    hugo mod get -u github.com/cornelius/hugo-photoalbum-theme
+    hugo mod get -u
     hugo mod tidy
 
-This rewrites `go.mod` and `go.sum` to a pseudo-version pointing at the latest commit on the theme's default branch. Rebuild with `hugo` to pick up the new layouts.
+This rewrites `go.mod` and `go.sum` to point at the latest commit on each direct dependency's default branch. Rebuild with `hugo` to pick up the new layouts.
